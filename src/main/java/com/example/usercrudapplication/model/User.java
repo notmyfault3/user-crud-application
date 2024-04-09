@@ -13,14 +13,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotBlank(message = "First Name should not be blank")
     @Size(min = 2, message = "First Name should be higher or equal to 2 characters")
     private String firstName;
 
-    @NotBlank(message = "Last Name should not be blank")
     @Size(min = 2, message = "Last Name should be higher or equal to 2 characters")
     private String lastName;
 
+    @NotBlank(message = "Email should not be blank")
     @Email(message = "Email is not valid")
     private String email;
+
 }
