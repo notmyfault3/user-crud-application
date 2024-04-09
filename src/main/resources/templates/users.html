@@ -10,7 +10,7 @@
     <div class="container mt-5">
         <div class="mb-3">
             <h3>User Management System</h3>
-            <button type="button" th:href="@{/user}" class="btn btn-primary">Add</button>
+            <a type="button" th:href="@{/users/user}" class="btn btn-primary">Add</a>
         </div>
 
         <div class="mb-3">
@@ -25,11 +25,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>John</td>
-                        <td>Doe</td>
-                        <td>john@example.com</td>
+                    <tr th:each="user : ${users}">
+                        <td th:text="${user.id}">1</td>
+                        <td th:text="${user.firstName}">John</td>
+                        <td th:text="${user.lastName}">Doe</td>
+                        <td th:text="${user.email}">john@example.com</td>
                         <td>action</td>
                     </tr>
                 </tbody>

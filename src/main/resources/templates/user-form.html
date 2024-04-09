@@ -9,18 +9,18 @@
 <body>
     <div class="container">
         <h2>Registration Form</h2>
-        <form th:action="@{/users/user}" method="post">
+        <form th:action="@{/users/save}" th:object="${user}" method="post">
             <div class="form-group">
-                <label for="firstName">First Name:</label>
-                <input type="text" class="form-control" id="firstName" placeholder="John">
+                <label>First Name:</label>
+                <input type="text" class="form-control" th:field="*{firstName}" placeholder="John">
             </div>
             <div class="form-group">
-                <label for="lastName">Last Name:</label>
-                <input type="text" class="form-control" id="lastName" placeholder="Doe">
+                <label>Last Name:</label>
+                <input type="text" class="form-control" th:field="*{lastName}" placeholder="Doe">
             </div>
             <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+                <label>Email address:</label>
+                <input type="email" class="form-control" th:field="*{email}" placeholder="example@gmail.com">
             </div>
             <div>
                 <a class="btn btn-info" th:href="@{/users}">Back</a>
