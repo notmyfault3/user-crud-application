@@ -40,15 +40,15 @@ public class UserController {
         return "redirect:/users";
     }
 
-    @GetMapping("/update-details")
-    public String updateUserDetails(@RequestParam("id") int id, Model model) {
+    @GetMapping("/update-details/{id}")
+    public String updateUserDetails(@PathVariable("id") int id, Model model) {
         User updatedUser = userService.findUserById(id);
         model.addAttribute("user", updatedUser);
         return "user-form";
     }
 
-    @GetMapping("/delete-user")
-    public String deleteUser(@RequestParam("id") int id) {
+    @GetMapping("/delete-user/{id}")
+    public String deleteUser(@PathVariable("id") int id) {
         userService.deleteUserById(id);
         return "redirect:/users";
     }
